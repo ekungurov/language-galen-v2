@@ -1,21 +1,21 @@
 # Syntax Highlighter for Galen Framework v2+
 
-Syntax highlighting for [Galen Framework version 2+][galen] for Atom.
+Syntax highlighting for [Galen Framework version 2+][galen] for Atom.  
 Converted from David Rubio's original work located at davidrv87/syntax-sublime-galen2
 
 ## Installation
 
 ### Installation via apm
 
-git clone https://github.com/ekungurov/language-galen-v2
-cd language-galen-v2
-apm link
+* git clone https://github.com/ekungurov/language-galen-v2
+* cd language-galen-v2
+* apm link
 
 ### Manual installation
 
 1. Download the [zip archive][zip].
 2. Go to `~/.atom/packages/`.
-3. Create a folder called `galen-v2` and extract the content of the `zip` file into it.
+3. Extract the content of the `zip` file into it.
 4. You may need to restart Atom
 
 ## Usage
@@ -24,8 +24,7 @@ Highlighting is available for `.gspec` files, assuming no other syntax highlight
 
 ## Contributing
 
-Please contribute to original version for Sublime Text
-https://github.com/davidrv87/syntax-sublime-galen2
+Please contribute to [original version][original] for Sublime Text by [David Rubio][david].
 
 ## License
 
@@ -35,3 +34,5 @@ Code copyright 2016. Code released under [the MIT License][license].
 [repository]: https://github.com/ekungurov/language-galen-v2
 [zip]: https://github.com/ekungurov/language-galen-v2/archive/master.zip
 [license]: https://github.com/ekungurov/language-galen-v2/blob/master/LICENSE
+[original]: https://github.com/davidrv87/syntax-sublime-galen2
+[david]: https://github.com/davidrv87
