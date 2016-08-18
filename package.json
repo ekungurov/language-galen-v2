@@ -1,0 +1,14 @@
+{
+  "name": "galen-v2",
+  "version": "0.1.0",
+  "description": "Galen Framework support for Atom",
+  "keywords": [
+	"Galen"
+  ],
+  "repository": "https://github.com/ekungurov/language-galen-v2",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,197 @@
+fileTypes: [
+  "gspec"
+]
+name: "Galen v2"
+patterns: [
+  {
+    include: "#core"
+  }
+]
+repository:
+  comments:
+    patterns: [
+      {
+        match: "^\\s*#.*"
+        name: "comment.line.number-sign.galen"
+      }
+    ]
+  core:
+    patterns: [
+      {
+        include: "#objects"
+      }
+      {
+        include: "#groups"
+      }
+      {
+        include: "#punctuation"
+      }
+      {
+        include: "#comments"
+      }
+      {
+        include: "#section"
+      }
+      {
+        include: "#keyword"
+      }
+      {
+        include: "#group"
+      }
+      {
+        include: "#rule"
+      }
+      {
+        include: "#variable"
+      }
+      {
+        include: "#specs"
+      }
+      {
+        include: "#test"
+      }
+      {
+        include: "#objects"
+      }
+    ]
+  group:
+    patterns: [
+      {
+        match: "\\s*&[-A-Za-z_0-9]*"
+        name: "constant.language.galen"
+      }
+    ]
+  groups:
+    patterns: [
+      {
+        begin: "(@groups)\\n$"
+        beginCaptures:
+          "1":
+            name: "keyword.operator.galen"
+        end: "(?=(@|=))"
+        endCaptures:
+          "1":
+            name: "support.function.galen"
+        patterns: [
+          {
+            include: "#comments"
+          }
+          {
+            captures:
+              "1":
+                name: "constant.language.galen"
+              "2":
+                name: "variable.parameter.galen"
+            match: "(\\s*\\S*)(\\s*.*)\\n$"
+          }
+        ]
+      }
+    ]
+  keyword:
+    patterns: [
+      {
+        captures:
+          "1":
+            name: "keyword.operator.galen"
+          "2":
+            name: "entity.name.function.galen"
+        match: "^\\s*(@import|@on|@script)\\s(.*)"
+        name: "keyword.operator.galen"
+      }
+      {
+        match: "(@objects|@groups|@forEach|@for|@if|@elseif|@else|(next)?\\sas\\s)"
+        name: "keyword.operator.galen"
+      }
+    ]
+  objects:
+    patterns: [
+      {
+        begin: "(@objects)"
+        beginCaptures:
+          "1":
+            name: "keyword.operator.galen"
+        end: "(?=(@|=))"
+        patterns: [
+          {
+            include: "#comments"
+          }
+          {
+            captures:
+              "1":
+                name: "variable.parameter.galen"
+              "2":
+                name: "string.quoted.triple"
+            match: "(\\s*\\S*)(\\s*.*)\\n$"
+          }
+        ]
+      }
+    ]
+  punctuation:
+    patterns: [
+      {
+        match: "\\|"
+        name: "storage.type.galen"
+      }
+      {
+        match: "(\\[|\\])"
+        name: "entity.name.function.galen"
+      }
+    ]
+  rule:
+    patterns: [
+      {
+        match: "^\\s*@rule.*"
+        name: "entity.name.function.galen"
+      }
+    ]
+  section:
+    patterns: [
+      {
+        match: "^\\s*=\\s.*\\s=$"
+        name: "support.function.galen"
+      }
+    ]
+  specs:
+    patterns: [
+      {
+        captures:
+          "1":
+            name: "string.quoted.triple"
+        match: "(near|below|above|left-of|right-of|(contains|inside)( partly)?|on (top|bottom) (left|right)|^\\s*(width) |^\\s*(height) |text (is|contains|starts|ends|matches)|aligned (vertically|horizontally) (all|top|right|left|bottom)?|absent|visible|centered (horizontally|vertically|all) (inside|on)|component |color scheme)"
+        name: "string.quoted.triple"
+      }
+      {
+        begin: "(css)"
+        beginCaptures:
+          "1":
+            name: "string.quoted.triple"
+        end: "(is|starts|ends|contains|matches)"
+        endCaptures:
+          "1":
+            name: "string.quoted.triple"
+      }
+      {
+        begin: "(^\\s*\")"
+        end: "(\")"
+        name: "support.function.galen"
+      }
+    ]
+  test:
+    patterns: [
+      {
+        captures:
+          "1":
+            name: "variable.parameter.galen"
+          "2":
+            name: "entity.name.function.galen"
+        match: "\\s*([-A-Za-z_\\., 0-9\\*]*)(:)\\n"
+      }
+    ]
+  variable:
+    patterns: [
+      {
+        match: "(\\$|\\%)\\{[-A-Za-z_]*\\}"
+        name: "variable.parameter.galen"
+      }
+    ]
+scopeName: "text.galen"
