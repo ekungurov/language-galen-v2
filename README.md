@@ -7,9 +7,9 @@ Converted from David Rubio's original work located at [davidrv87/syntax-sublime-
 
 ### Installation via apm
 
-* git clone https://github.com/ekungurov/language-galen-v2
-* cd language-galen-v2
-* apm link
+git clone https://github.com/ekungurov/language-galen-v2  
+cd language-galen-v2  
+apm link  
 
 ### Manual installation
 
