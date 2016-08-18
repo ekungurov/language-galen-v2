@@ -1,7 +1,7 @@
 # Syntax Highlighter for Galen Framework v2+
 
 Syntax highlighting for [Galen Framework version 2+][galen] for Atom.  
-Converted from David Rubio's original work located at davidrv87/syntax-sublime-galen2
+Converted from David Rubio's original work located at [davidrv87/syntax-sublime-galen2][original]
 
 ## Installation
 
